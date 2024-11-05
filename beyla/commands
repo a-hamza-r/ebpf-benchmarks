@@ -1,0 +1,16 @@
+clang -O2 -g -target bpf -D__TARGET_ARCH_x86 -I headers -c watch_helper.c -o watcher.o
+clang -O2 -g -target bpf -D__TARGET_ARCH_x86 -DBPF_DEBUG -I headers -c watch_helper.c -o watcher_debug.o
+clang -O2 -g -target bpf -D__TARGET_ARCH_x86 -DNO_HEADER_PROPAGATION -I headers -c go_tracer.c -o bytecode/gotracer_no_hdr_prop.o
+clang -O2 -g -target bpf -D__TARGET_ARCH_x86 -DNO_HEADER_PROPAGATION -DBPF_DEBUG -I headers -c go_tracer.c -o bytecode/gotracer_debug_no_hdr_prop.o
+clang -O2 -g -target bpf -D__TARGET_ARCH_x86 -I headers -c go_tracer.c -o bytecode/gotracer.o
+clang -O2 -g -target bpf -D__TARGET_ARCH_x86 -DBPF_DEBUG -I headers -c go_tracer.c -o bytecode/gotracer_debug.o
+clang -O2 -g -target bpf -D__TARGET_ARCH_x86 -I headers -c tracer_common.c -o bytecode/common.o
+clang -O2 -g -target bpf -D__TARGET_ARCH_x86 -I headers -c tc_tracer.c -o bytecode/tctracer.o
+clang -O2 -g -target bpf -D__TARGET_ARCH_x86 -DBPF_DEBUG -I headers -c tc_tracer.c -o bytecode/tctracer_debug.o
+clang -O2 -g -target bpf -D__TARGET_ARCH_x86 -DBPF_DEBUG -I headers -c debug_log.c -o bytecode/logger.o
+clang -O2 -g -target bpf -D__TARGET_ARCH_x86 -I headers -c generic_tracer.c -o bytecode/generictracer.o
+clang -O2 -g -target bpf -D__TARGET_ARCH_x86 -DBPF_TRACEPARENT -I headers -c generic_tracer.c -o bytecode/generictracer_tp.o
+clang -O2 -g -target bpf -D__TARGET_ARCH_x86 -DBPF_DEBUG -I headers -c generic_tracer.c -o bytecode/generictracer_debug.o
+clang -O2 -g -target bpf -D__TARGET_ARCH_x86 -DBPF_DEBUG -DBPF_TRACEPARENT -I headers -c generic_tracer.c -o bytecode/generictracer_debug_tp.o
+clang -O2 -g -target bpf -D__TARGET_ARCH_x86 -I headers -c flows.c -o bytecode/tracer.o
+clang -O2 -g -target bpf -D__TARGET_ARCH_x86 -I headers -c flows_sock.c -o bytecode/sock_tracer.o
