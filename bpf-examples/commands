@@ -1,0 +1,21 @@
+clang -O2 -g -target bpf -c AF_XDP-example/xdpsock_kern.c  -o AF_XDP-example/xdpsock_kern.o
+clang -O2 -g -target bpf -I headers/ -I lib/xdp-tools/headers/ -c AF_XDP-forwarding/xsk_fwd.c -o AF_XDP-forwarding/xsk_fwd.o
+clang -O2 -g -target bpf -I headers/ -I include/ -I lib/xdp-tools/headers/ -c AF_XDP-interaction/af_xdp_kern.c -o AF_XDP-interaction/af_xdp_kern.o
+clang -O2 -g -target bpf -I headers/ -I include/ -I lib/xdp-tools/headers/ -c  bpf-link-hang/xdp-pass.c -o bpf-link-hang/xdp-pass.o
+clang -O2 -g -target bpf -I headers/ -I include/ -I lib/xdp-tools/headers/ -c dhcp-relay/dhcp_kern_xdp.c -o dhcp-relay/dhcp_kern_xdp.o
+clang -O2 -g -target bpf -I headers/ -I include/ -I lib/xdp-tools/headers/ -c encap-forward/xdp_encap.c -o encap-forward/xdp_encap.o
+clang -O2 -g -target bpf -I headers/ -I include/ -I lib/xdp-tools/headers/ -c encap-forward/tc_bpf_encap.c -o encap-forward/tc_bpf_encap.o
+clang -O2 -g -target bpf -I headers/ -I include/clude/ -I lib/xdp-tools/headers/ -D__TARGET_ARCH_x86 -c ktrace-CO-RE/ktrace01_kern.c -o ktrace-CO-RE/ktrace01_kern.o
+clang -O2 -g -target bpf -I headers/ -I include/clude/ -I lib/xdp-tools/headers/ -c lsm-nobpf/lsm-nobpf-kern.c -o lsm-nobpf/lsm-nobpf-kern.o
+clang -O2 -g -target bpf -I headers/ -I include/clude/ -I lib/xdp-tools/headers/ -c MTU-tests/tc_mtu_enforce.c -o MTU-tests/tc_mtu_enforce.o
+clang -O2 -g -target bpf -I headers/ -I include/clude/ -I lib/xdp-tools/headers/ -c MTU-tests/tc_bpf_inc_pkt_size.c -o MTU-tests/tc_bpf_inc_pkt_size.o
+clang -O2 -g -target bpf -I headers/ -I include/ -I lib/xdp-tools/headers/ -c nat64-bpf/nat64_kern.c -o nat64-bpf/nat64_kern.o
+clang -O2 -g -target bpf -I headers/ -I include/ -I lib/xdp-tools/headers/ -D__TARGET_ARCH_x86 -c pkt-loop-filter/pkt-loop-filter.kern.c -o pkt-loop-filter/pkt-loop-filter.kern.o
+clang -O2 -g -target bpf -I headers/ -I include/ -I lib/xdp-tools/headers/ -D__TARGET_ARCH_x86 -c pkt-loop-filter/get-bond-active.kern.c -o pkt-loop-filter/get-bond-active.kern.o
+clang -O2 -g -target bpf -I headers/ -I include/ -I lib/xdp-tools/headers/ -c pping/pping_kern.c -o pping/pping_kern.o
+clang -O2 -g -target bpf -I headers/ -I include/ -I lib/xdp-tools/headers/ -c preserve-dscp/preserve_dscp_kern.c -o preserve-dscp/preserve_dscp_kern.o
+clang -O2 -g -target bpf -I headers/ -I include/ -I lib/xdp-tools/headers/ -c tc-basic-classifier/filter.c -o tc-basic-classifier/filter.o
+clang -O2 -g -target bpf -I headers/ -I include/ -I lib/xdp-tools/headers/ -c tc-policy/tc_txq_policy_kern.c -o tc-policy/tc_txq_policy_kern.o
+clang -O2 -g -target bpf -I headers/ -I include/ -I lib/xdp-tools/headers/ -c traffic-pacing-edt/xdp_cpumap_qinq.c -o traffic-pacing-edt/xdp_cpumap_qinq.o
+clang -O2 -g -target bpf -I headers/ -I include/ -I lib/xdp-tools/headers/ -c traffic-pacing-edt/edt_pacer_vlan.c -o traffic-pacing-edt/edt_pacer_vlan.o
+clang -O2 -g -target bpf -I headers/ -I include/ -I lib/xdp-tools/headers/ -c xdp-synproxy/xdp_synproxy_kern.c -o xdp-synproxy/xdp_synproxy_kern.o
